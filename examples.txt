@@ -1,0 +1,293 @@
+<question>
+Question: What is the highest closing price recorded in the table? 
+</question>
+<SQLQuery>
+SQLQuery: SELECT MAX(Close) FROM apple_daily;  
+</SQLQuery>
+
+<question>
+Question: How many records are there in the table? 
+</question>
+<SQLQuery>
+SQLQuery: SELECT COUNT(*) FROM apple_daily; 
+</SQLQuery>
+
+<question>
+Question: What is the average volume of the stocks traded? 
+</question>
+<SQLQuery>
+SQLQuery: SELECT AVG(Volume) FROM apple_daily; 
+</SQLQuery>
+
+<question>
+Question: What is the date and time of the first recorded entry? 
+</question>
+<SQLQuery>
+SQLQuery: SELECT MIN(Date), MIN(Time) FROM apple_daily;
+</SQLQuery>
+
+<question>
+Question: What is the range of the stock prices (difference between highest and lowest)?
+</question>
+<SQLQuery>
+SQLQuery: SELECT MAX(High) - MIN(Low) FROM apple_daily; 
+</SQLQuery>
+
+<question>
+Question: What is the lowest closing price recorded in the table?
+</question>
+<SQLQuery>
+SQLQuery: SELECT MIN(Close) FROM apple_daily;
+</SQLQuery>
+
+<question>
+Question: How many distinct dates are there in the table?
+</question>
+<SQLQuery>
+SQLQuery: SELECT COUNT(DISTINCT Date) FROM apple_daily;
+</SQLQuery>
+
+<question>
+Question: What is the average high price for the month of January?
+</question>
+<SQLQuery>
+SQLQuery: SELECT AVG(High) FROM apple_daily WHERE strftime('%m', Date) = '01';
+</SQLQuery>
+
+<question>
+Question: What is the total number of records for the year 2021?
+</question>
+<SQLQuery>
+SQLQuery: SELECT COUNT(*) FROM apple_daily WHERE strftime('%Y', Date) = '2021';
+</SQLQuery>
+
+<question>
+Question: What is the highest opening price recorded in the table?
+</question>
+<SQLQuery>
+SQLQuery: SELECT MAX(Open) FROM apple_daily;
+</SQLQuery>
+
+<question>
+Question: How many distinct months are there in the table?
+</question>
+<SQLQuery>
+SQLQuery: SELECT COUNT(DISTINCT strftime('%m', Date)) FROM apple_daily;
+</SQLQuery>
+
+<question>
+Question: What is the average low price for the month of February?
+</question>
+<SQLQuery>
+SQLQuery: SELECT AVG(Low) FROM apple_daily WHERE strftime('%m', Date) = '02';
+</SQLQuery>
+
+<question>
+Question: What is the highest closing price recorded in the year 2023?
+</question>
+<SQLQuery>
+SQLQuery: SELECT MAX(Close) FROM apple_daily WHERE strftime('%Y', Date) = '2023';
+</SQLQuery>
+
+<question>
+Question: How many records are there for the month of March?
+</question>
+<SQLQuery>
+SQLQuery: SELECT COUNT(*) FROM apple_daily WHERE strftime('%m', Date) = '03';
+</SQLQuery>
+
+<question>
+Question: What is the highest closing price recorded on January 15th?
+</question>
+<SQLQuery>
+SQLQuery: SELECT MAX(Close) FROM apple_daily WHERE strftime('%m-%d', Date) = '01-15';
+</SQLQuery>
+
+<question>
+Question: How many records are there for the month of February in the year 2023?
+</question>
+<SQLQuery>
+SQLQuery: SELECT COUNT(*) FROM apple_daily WHERE strftime('%Y-%m', Date) = '2023-02';
+</SQLQuery>
+
+<question>
+Question: How many records are there for the day 02-15?
+</question>
+<SQLQuery>
+SQLQuery: SELECT COUNT(*) FROM apple_daily WHERE strftime('%m-%d', Date) = '02-15';
+</SQLQuery>
+
+<question>
+Question: How many records are there for the day 08-31?
+</question>
+<SQLQuery>
+SQLQuery: SELECT COUNT(*) FROM apple_daily WHERE strftime('%m-%d', Date) = '08-31';
+</SQLQuery>
+
+<question>
+Question: How many records are there for the day 10-10?
+</question>
+<SQLQuery>
+SQLQuery: SELECT COUNT(*) FROM apple_daily WHERE strftime('%m-%d', Date) = '10-10';
+</SQLQuery>
+
+<question>
+Question: How many records are there for the day 05-20 with a volume greater than 1 million?
+</question>
+<SQLQuery>
+SQLQuery: SELECT COUNT(*) FROM apple_daily WHERE strftime('%m-%d', Date) = '05-20' AND Volume > 1000000;
+</SQLQuery>
+
+<question>
+Question: How many records are there for the day 05-20 with a volume greater than 1 million?
+</question>
+<SQLQuery>
+SQLQuery: SELECT COUNT(*) FROM apple_daily WHERE strftime('%m-%d', Date) = '05-20' AND Volume > 1000000;
+</SQLQuery>
+
+<question>
+Question: I want the first five records and their Date and Time.
+</question>
+<SQLQuery>
+SQLQuery: SELECT Date, Time FROM apple_daily LIMIT 5;
+</SQLQuery>
+
+<question>
+Question: Question: What are the first 10 records in the table?
+</question>
+<SQLQuery>
+SQLQuery: SELECT * FROM apple_daily LIMIT 10;
+</SQLQuery>
+
+<question>
+Question: Give me the closing price of records that have a Date greater than 2023-12-18.
+</question>
+<SQLQuery>
+SQLQuery: SELECT Close FROM apple_daily WHERE Date >= '2023-12-18';
+</SQLQuery>
+
+<question>
+Question: How many distinct years are there in the table?
+</question>
+<SQLQuery>
+SQLQuery: SELECT COUNT(DISTINCT strftime('%Y', Date)) FROM apple_daily;
+</SQLQuery>
+
+<question>
+Question: What are the average high prices for records before the date '2023-01-11'? (Include the values from that date)
+</question>
+<SQLQuery>
+SQLQuery: SELECT AVG(High) FROM apple_daily WHERE Date <= '2023-01-11';
+</SQLQuery>
+
+<question>
+Question: What is the highest closing price recorded on a Monday?
+</question>
+<SQLQuery>
+SQLQuery: SELECT MAX(Close) FROM apple_daily WHERE strftime('%w', Date) = '1';
+</SQLQuery>
+
+<question>
+Question: What is the average low price for records with a closing price between 100 and 200?
+</question>
+<SQLQuery>
+SQLQuery: SELECT AVG(Low) FROM apple_daily WHERE Close BETWEEN 100 AND 200;
+</SQLQuery>
+
+<question>
+Question: How many records are there for the day 07-04 with an opening price less than 150?
+</question>
+<SQLQuery>
+SQLQuery: SELECT COUNT(*) FROM apple_daily WHERE strftime('%m-%d', Date) = '07-04' AND Open < 150;
+</SQLQuery>
+
+<question>
+Question: What is the average volume of the stocks traded on a Sunday?
+</question>
+<SQLQuery>
+SQLQuery: SELECT AVG(Volume) FROM apple_daily WHERE strftime('%w', Date) = '0';
+</SQLQuery>
+
+<question>
+Question: What is the highest opening price recorded on a Friday?
+</question>
+<SQLQuery>
+SQLQuery: SELECT MAX(Open) FROM apple_daily WHERE strftime('%w', Date) = '5';
+</SQLQuery>
+
+<question>
+Question: What is the average high price for records on a Wednesday?
+</question>
+<SQLQuery>
+SQLQuery: SELECT AVG(High) FROM apple_daily WHERE strftime('%w', Date) = '3';
+</SQLQuery>
+
+<question>
+Question: I want to export the data
+</question>
+<SQLQuery>
+SQLQuery: SELECT export data;
+</SQLQuery>
+
+<question>
+Question: Could you give me a file with the data retreived so far?
+</question>
+<SQLQuery>
+SQLQuery: SELECT export data;
+</SQLQuery>
+
+<question>
+Question: Give me a csv with the results
+</question>
+<SQLQuery>
+SQLQuery: SELECT export data;
+</SQLQuery>
+
+<question>
+Question: Please give me the file with the queries results
+</question>
+<SQLQuery>
+SQLQuery: SELECT export data;
+</SQLQuery>
+
+<question>
+Question: I want to export the csv
+</question>
+<SQLQuery>
+SQLQuery: SELECT export data;
+</SQLQuery>
+
+<question>
+Question: Export csv
+</question>
+<SQLQuery>
+SQLQuery: SELECT export data;
+</SQLQuery>
+
+<question>
+Question: What's the average value of the columns Close and Volume in the table apple_daily?
+</question>
+<SQLQuery>
+SQLQuery: SELECT AVG(Close), AVG(Volume) FROM apple_daily;
+</SQLQuery>
+
+<question>
+Question: Which is the max value of the columns Open and Close?
+</question>
+<SQLQuery>
+SQLQuery: SELECT MAX(Open), MAX(Close) FROM apple_daily;
+</SQLQuery>
+
+<question>
+Question: What's the average value of every column?
+</question>
+<SQLQuery>
+SQLQuery: SELECT AVG(Date), AVG(Time), AVG(Open), AVG(High), AVG(Low), AVG(Close), AVG(Volume) FROM apple_daily;
+</SQLQuery>
+
+<question>
+Question: What's the min value of columns Open and Close?
+</question>
+<SQLQuery>
+SQLQuery: SELECT MIN(Open), MIN(Close) FROM apple_daily;
+</SQLQuery>
