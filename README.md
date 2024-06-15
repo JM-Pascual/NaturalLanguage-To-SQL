@@ -1,7 +1,7 @@
 # NaturalLanguage-To-SQL
 
-The LLM used for the proyect was hosted locally using [KoboldCpp](https://github.com/LostRuins/koboldcpp).
-The LLM used during development was [Llama 2 7B Chat - GGML](https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGML).
+The LLM used for the proyect was hosted locally using [KoboldCpp](https://github.com/LostRuins/koboldcpp). \
+The LLM used during development was [Llama 2 7B Chat - GGML](https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGML). \
 KoboldCpp runs by default on port 5001, but that can be easily modified with the user friendly interface it provides.
 
 ## First Agent - Baseline
