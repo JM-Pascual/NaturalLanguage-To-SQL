@@ -11,7 +11,7 @@ Based on the results in this initial Notebook, I made several design decisions f
 2. I decided to use [Divine Intellect](https://github.com/oobabooga/text-generation-webui/blob/ae8cd449ae3e0236ecb3775892bb1eea23f9ed68/presets/Divine%20Intellect.yaml) as the preset for the LLM settings. This preset is proven to have great results for instruction following scenarios.
 
 I've also found some Query types that were prone to fail when tested. These were:
-1. Queries that involved Specific dates or accessed to specific elements in a date (One of the main concerns in the problem presentation) due to the model not using SQLite resources for handling dates.
+1. Queries that involved Specific dates or accessed to specific elements in a date due to the model not using SQLite resources for handling dates.
 2. Queries that included information from two different columns
 
 ## Second Agent - Final
